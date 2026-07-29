@@ -1,0 +1,318 @@
+[
+  {
+    "id": "d001",
+    "name": "Marche de Mvog-Ada",
+    "quartier": "Mvog-Ada",
+    "category": "marche",
+    "description": "Grand marche de quartier tres anime, connu pour ses tissus, ses fruits et legumes frais et son ambiance matinale.",
+    "tags": [
+      "shopping",
+      "artisanat",
+      "vie-de-quartier"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Tot le matin, 6h-9h",
+    "popularity": 41,
+    "image": "https://picsum.photos/seed/d001/640/360"
+  },
+  {
+    "id": "d002",
+    "name": "Terrain Municipal d'Etoudi",
+    "quartier": "Etoudi",
+    "category": "sport",
+    "description": "Terrain de football communautaire ou se rassemblent les equipes de quartier chaque week-end.",
+    "tags": [
+      "sport",
+      "foot",
+      "jeunesse"
+    ],
+    "avg_price_fcfa": 500,
+    "best_time": "Samedi et dimanche apres-midi",
+    "popularity": 55,
+    "image": "https://picsum.photos/seed/d002/640/360"
+  },
+  {
+    "id": "d003",
+    "name": "Maison des Jeunes de Nlongkak",
+    "quartier": "Nlongkak",
+    "category": "culture",
+    "description": "Centre culturel proposant ateliers de danse, theatre et musique pour les jeunes du quartier.",
+    "tags": [
+      "culture",
+      "musique",
+      "danse",
+      "jeunesse"
+    ],
+    "avg_price_fcfa": 1000,
+    "best_time": "En semaine, 15h-18h",
+    "popularity": 33,
+    "image": "https://picsum.photos/seed/d003/640/360"
+  },
+  {
+    "id": "d004",
+    "name": "Bibliotheque Municipale de Yaounde",
+    "quartier": "Centre-ville",
+    "category": "bibliotheque",
+    "description": "Bibliotheque publique avec espace de lecture calme et acces gratuit pour les etudiants du quartier.",
+    "tags": [
+      "etude",
+      "calme",
+      "gratuit"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Lundi-vendredi, 9h-17h",
+    "popularity": 27,
+    "image": "https://picsum.photos/seed/d004/640/360"
+  },
+  {
+    "id": "d005",
+    "name": "Place des Fetes de Bastos",
+    "quartier": "Bastos",
+    "category": "parc",
+    "description": "Espace vert ombrage, populaire pour les pique-niques en famille et les rencontres entre voisins.",
+    "tags": [
+      "nature",
+      "famille",
+      "detente"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Dimanche apres-midi",
+    "popularity": 38,
+    "image": "https://picsum.photos/seed/d005/640/360"
+  },
+  {
+    "id": "d006",
+    "name": "Maquis Chez Mama Essos",
+    "quartier": "Essos",
+    "category": "restaurant",
+    "description": "Maquis de quartier reconnu pour son poisson braise et son ndole, prix accessibles.",
+    "tags": [
+      "food",
+      "vie-de-quartier",
+      "soiree"
+    ],
+    "avg_price_fcfa": 2500,
+    "best_time": "Soir, a partir de 18h",
+    "popularity": 62,
+    "image": "https://picsum.photos/seed/d006/640/360"
+  },
+  {
+    "id": "d007",
+    "name": "Salle des Fetes de Mendong",
+    "quartier": "Mendong",
+    "category": "salle-de-fete",
+    "description": "Salle communautaire louee pour mariages, anniversaires et reunions de quartier.",
+    "tags": [
+      "evenement",
+      "famille",
+      "musique"
+    ],
+    "avg_price_fcfa": 15000,
+    "best_time": "Week-end",
+    "popularity": 19,
+    "image": "https://picsum.photos/seed/d007/640/360"
+  },
+  {
+    "id": "d008",
+    "name": "Marche Artisanal de Nkolbisson",
+    "quartier": "Nkolbisson",
+    "category": "artisanat",
+    "description": "Petits ateliers de sculpteurs et couturiers locaux, ideal pour trouver un cadeau fait main.",
+    "tags": [
+      "artisanat",
+      "shopping",
+      "culture"
+    ],
+    "avg_price_fcfa": 3000,
+    "best_time": "Samedi matin",
+    "popularity": 22,
+    "image": "https://picsum.photos/seed/d008/640/360"
+  },
+  {
+    "id": "d009",
+    "name": "Terrain Multisports d'Emana",
+    "quartier": "Emana",
+    "category": "sport",
+    "description": "Terrain polyvalent (basket, handball) ouvert aux jeunes du quartier en fin de journee.",
+    "tags": [
+      "sport",
+      "basket",
+      "jeunesse"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Tous les jours, 16h-19h",
+    "popularity": 29,
+    "image": "https://picsum.photos/seed/d009/640/360"
+  },
+  {
+    "id": "d010",
+    "name": "Marche Central d'Odza",
+    "quartier": "Odza",
+    "category": "marche",
+    "description": "Marche de proximite pour les produits vivriers, tres frequente en debut de mois.",
+    "tags": [
+      "shopping",
+      "vie-de-quartier"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Matin",
+    "popularity": 24,
+    "image": "https://picsum.photos/seed/d010/640/360"
+  },
+  {
+    "id": "d011",
+    "name": "Espace Culturel de Mvan",
+    "quartier": "Mvan",
+    "category": "culture",
+    "description": "Petit espace associatif organisant des projections de films et des soirees de contes.",
+    "tags": [
+      "culture",
+      "cinema",
+      "famille"
+    ],
+    "avg_price_fcfa": 1000,
+    "best_time": "Vendredi soir",
+    "popularity": 17,
+    "image": "https://picsum.photos/seed/d011/640/360"
+  },
+  {
+    "id": "d012",
+    "name": "Parc de Tsinga",
+    "quartier": "Tsinga",
+    "category": "parc",
+    "description": "Petit parc de quartier avec bancs et aire de jeux pour enfants.",
+    "tags": [
+      "nature",
+      "famille",
+      "detente"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Apres-midi",
+    "popularity": 20,
+    "image": "https://picsum.photos/seed/d012/640/360"
+  },
+  {
+    "id": "d013",
+    "name": "Maquis Le Coin des Amis - Melen",
+    "quartier": "Melen",
+    "category": "restaurant",
+    "description": "Lieu de rendez-vous prise des etudiants pour un repas simple et abordable entre cours.",
+    "tags": [
+      "food",
+      "etudiant",
+      "vie-de-quartier"
+    ],
+    "avg_price_fcfa": 1500,
+    "best_time": "Midi",
+    "popularity": 45,
+    "image": "https://picsum.photos/seed/d013/640/360"
+  },
+  {
+    "id": "d014",
+    "name": "Terrain de Foot d'Awae",
+    "quartier": "Awae",
+    "category": "sport",
+    "description": "Terrain de football en terre battue, coeur de la vie sportive du quartier.",
+    "tags": [
+      "sport",
+      "foot",
+      "jeunesse"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Week-end",
+    "popularity": 31,
+    "image": "https://picsum.photos/seed/d014/640/360"
+  },
+  {
+    "id": "d015",
+    "name": "Marche de Simbock",
+    "quartier": "Simbock",
+    "category": "marche",
+    "description": "Marche local connu pour ses produits agricoles cultives dans les environs.",
+    "tags": [
+      "shopping",
+      "vie-de-quartier"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Tot le matin",
+    "popularity": 15,
+    "image": "https://picsum.photos/seed/d015/640/360"
+  },
+  {
+    "id": "d016",
+    "name": "Maison Culturelle de Ngousso",
+    "quartier": "Ngousso",
+    "category": "culture",
+    "description": "Centre proposant cours de percussion traditionnelle et ateliers de peinture pour tous les ages.",
+    "tags": [
+      "culture",
+      "musique",
+      "art"
+    ],
+    "avg_price_fcfa": 2000,
+    "best_time": "Mercredi et samedi",
+    "popularity": 26,
+    "image": "https://picsum.photos/seed/d016/640/360"
+  },
+  {
+    "id": "d017",
+    "name": "Place Publique d'Etoug-Ebe",
+    "quartier": "Etoug-Ebe",
+    "category": "parc",
+    "description": "Petite place ou le quartier se retrouve le soir pour discuter et jouer aux dames.",
+    "tags": [
+      "detente",
+      "vie-de-quartier"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Soir",
+    "popularity": 18,
+    "image": "https://picsum.photos/seed/d017/640/360"
+  },
+  {
+    "id": "d018",
+    "name": "Marche Artisanal de Nsam",
+    "quartier": "Nsam",
+    "category": "artisanat",
+    "description": "Stands de bijoux et de tissus traditionnels tenus par des artisans du quartier.",
+    "tags": [
+      "artisanat",
+      "shopping"
+    ],
+    "avg_price_fcfa": 2500,
+    "best_time": "Samedi",
+    "popularity": 21,
+    "image": "https://picsum.photos/seed/d018/640/360"
+  },
+  {
+    "id": "d019",
+    "name": "Bibliotheque de Quartier Mfandena",
+    "quartier": "Mfandena",
+    "category": "bibliotheque",
+    "description": "Petite bibliotheque associative geree par des benevoles du quartier, acces libre.",
+    "tags": [
+      "etude",
+      "gratuit",
+      "calme"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Apres l'ecole, 15h-18h",
+    "popularity": 12,
+    "image": "https://picsum.photos/seed/d019/640/360"
+  },
+  {
+    "id": "d020",
+    "name": "Salle Polyvalente de Biyem-Assi",
+    "quartier": "Biyem-Assi",
+    "category": "salle-de-fete",
+    "description": "Grande salle utilisee pour les reunions d'association de quartier et les celebrations.",
+    "tags": [
+      "evenement",
+      "famille"
+    ],
+    "avg_price_fcfa": 12000,
+    "best_time": "Week-end",
+    "popularity": 23,
+    "image": "https://picsum.photos/seed/d020/640/360"
+  }
+]

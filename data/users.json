@@ -1,0 +1,12 @@
+[
+  {
+    "id": "1074ac139730",
+    "full_name": "FAHDIL",
+    "email": "tuheu.moussa@ictuniversity.edu.cm",
+    "password_hash": "scrypt:32768:8:1$ceTOneGNJOp3kJcH$11d68beef725cccd6f68420022790f1588e1c714b7560e81597c12aa2f7cff7540d4c7c7339b2fe5ff452a1aba6dedb95c943441519b91a3e03b65e76fa3a632",
+    "quartier": "SOA",
+    "preferences": [
+      "sport"
+    ]
+  }
+]
