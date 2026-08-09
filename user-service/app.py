@@ -1,11 +1,21 @@
-"""POST /register, POST /login, GET /me"""
-import re
-from flask import Blueprint, request, jsonify, g
+"""
+user-service - Phase 2 (CS 4122 - Distributed Systems)
 
+Owns the "users" data exclusively. Handles registration, login, and
+profile lookups - including an /internal endpoint that the other
+services call over the network instead of touching users.json directly.
+"""
+import re
+
+from flask import Flask, request, jsonify, g
+from flask_cors import CORS
+
+import config
 import storage
 from auth import hash_password, verify_password, create_token, login_required
 
-auth_bp = Blueprint("auth", __name__)
+app = Flask(__name__)
+CORS(app)
 
 EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 
@@ -20,7 +30,7 @@ def _public(user: dict) -> dict:
     }
 
 
-@auth_bp.post("/register")
+@app.post("/register")
 def register():
     body = request.get_json(silent=True) or {}
     full_name = (body.get("full_name") or "").strip()
@@ -51,7 +61,7 @@ def register():
     return jsonify({"access_token": token, "token_type": "bearer", "user": _public(user)}), 201
 
 
-@auth_bp.post("/login")
+@app.post("/login")
 def login():
     body = request.get_json(silent=True) or {}
     email = (body.get("email") or "").strip().lower()
@@ -65,7 +75,28 @@ def login():
     return jsonify({"access_token": token, "token_type": "bearer", "user": _public(user)})
 
 
-@auth_bp.get("/me")
+@app.get("/me")
 @login_required
 def me():
     return jsonify(_public(g.current_user))
+
+
+# ---------- Internal, service-to-service only ----------
+# Not exposed through the API Gateway's public routes. Lets
+# recommendation-service pull a user's preferences without ever
+# touching users.json itself.
+@app.get("/internal/users/<user_id>")
+def internal_get_user(user_id):
+    user = storage.find_user_by_id(user_id)
+    if not user:
+        return jsonify({"error": "User not found"}), 404
+    return jsonify(_public(user))
+
+
+@app.get("/health")
+def health():
+    return {"service": "user-service", "status": "ok"}
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=config.PORT, debug=True)

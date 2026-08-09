@@ -1,8 +1,9 @@
-"""JWT issuing/verification + password hashing.
+"""JWT issuing/verification + password hashing - user-service.
 
-Uses PyJWT + Werkzeug's built-in password hashing (already a Flask
-dependency), so there's nothing extra heavyweight to install beyond
-Flask itself and PyJWT.
+user-service is the only place that ISSUES tokens (login/register). Every
+service independently VERIFIES them with the same SECRET_KEY - that's
+the decentralized-auth pattern: a service never has to call user-service
+just to authenticate a request.
 """
 from datetime import datetime, timedelta, timezone
 from functools import wraps

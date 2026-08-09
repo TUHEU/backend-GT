@@ -1,0 +1,71 @@
+# Ports here match the actual VPS deployment (see DEPLOY_VPS.md):
+# api-gateway is the only one meant to be reachable from outside, on
+# the port already open in ufw and already pointed to by the frontend
+# (5003). user-service/itinerary-service/recommendation-service moved
+# off 5000-5002 since those were already taken by other apps on this
+# shared VPS - 5011/5012/5013 were free (`ss -tulpn` checked first).
+services:
+  user-service:
+    build: ./user-service
+    ports:
+      - "5011:5011"
+    volumes:
+      - ./user-service/data:/app/data
+    environment:
+      - SECRET_KEY=${SECRET_KEY:-yaounde-ensemble-phase2-secret-change-me}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5011/health')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  itinerary-service:
+    build: ./itinerary-service
+    ports:
+      - "5012:5012"
+    volumes:
+      - ./itinerary-service/data:/app/data
+    environment:
+      - SECRET_KEY=${SECRET_KEY:-yaounde-ensemble-phase2-secret-change-me}
+      - RECOMMENDATION_SERVICE_URL=http://recommendation-service:5013
+    depends_on:
+      - recommendation-service
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5012/health')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  recommendation-service:
+    build: ./recommendation-service
+    ports:
+      - "5013:5013"
+    volumes:
+      - ./recommendation-service/data:/app/data
+    environment:
+      - SECRET_KEY=${SECRET_KEY:-yaounde-ensemble-phase2-secret-change-me}
+      - USER_SERVICE_URL=http://user-service:5011
+      - ITINERARY_SERVICE_URL=http://itinerary-service:5012
+    depends_on:
+      - user-service
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5013/health')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "5003:5003"
+    environment:
+      - USER_SERVICE_URL=http://user-service:5011
+      - ITINERARY_SERVICE_URL=http://itinerary-service:5012
+      - RECOMMENDATION_SERVICE_URL=http://recommendation-service:5013
+    depends_on:
+      user-service:
+        condition: service_healthy
+      itinerary-service:
+        condition: service_healthy
+      recommendation-service:
+        condition: service_healthy
