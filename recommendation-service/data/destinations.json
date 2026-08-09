@@ -354,5 +354,185 @@
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais_des_Sports_Foule.jpg",
     "lat": 3.8306,
     "lng": 11.4839
+  },
+  {
+    "id": "d021",
+    "name": "Marche de Ekounou",
+    "quartier": "Ekounou",
+    "category": "marche",
+    "description": "Marche de proximite tres frequente en debut de soiree, connu pour ses vivres frais et ses beignets-haricots du matin.",
+    "tags": [
+      "shopping",
+      "vie-de-quartier",
+      "alimentation"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "6h-9h et 17h-19h",
+    "popularity": 33,
+    "lat": 3.84,
+    "lng": 11.535,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ambiance_du_march%C3%A9_du_Mfoundi.jpg"
+  },
+  {
+    "id": "d022",
+    "name": "Terrain de Sport de Nkolndongo",
+    "quartier": "Nkolndongo",
+    "category": "sport",
+    "description": "Terrain de quartier ou se retrouvent les equipes de football et de basket les week-ends.",
+    "tags": [
+      "sport",
+      "jeunesse",
+      "vie-de-quartier"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Samedi et dimanche apres-midi",
+    "popularity": 27,
+    "lat": 3.89,
+    "lng": 11.51,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Soccer_Training_in_the_Yaound%C3%A9_town.jpg"
+  },
+  {
+    "id": "d023",
+    "name": "Centre Culturel de Djoungolo",
+    "quartier": "Djoungolo",
+    "category": "culture",
+    "description": "Espace associatif qui accueille repetitions de danse traditionnelle, expositions et ateliers pour les jeunes du quartier.",
+    "tags": [
+      "culture",
+      "danse",
+      "jeunesse"
+    ],
+    "avg_price_fcfa": 500,
+    "best_time": "Mercredi et samedi, 15h-18h",
+    "popularity": 22,
+    "lat": 3.895,
+    "lng": 11.525,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/CENTRE_CULTUREL_CAMEROUNAIS_(Yaound%C3%A9)_img1.jpg"
+  },
+  {
+    "id": "d024",
+    "name": "Espace Vert de Mimboman",
+    "quartier": "Mimboman",
+    "category": "parc",
+    "description": "Petit espace vert amenage ou les familles viennent se detendre en fin de journee.",
+    "tags": [
+      "nature",
+      "detente",
+      "famille"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Fin d'apres-midi",
+    "popularity": 25,
+    "lat": 3.8722,
+    "lng": 11.54,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cameroon_-_landscape.jpg"
+  },
+  {
+    "id": "d025",
+    "name": "Bibliotheque de Efoulan",
+    "quartier": "Efoulan",
+    "category": "bibliotheque",
+    "description": "Petite bibliotheque de quartier appreciee des lyceens pour reviser au calme.",
+    "tags": [
+      "etude",
+      "lecture",
+      "calme"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Lundi-vendredi, 9h-17h",
+    "popularity": 18,
+    "lat": 3.835,
+    "lng": 11.49,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/American_School_of_Yaound%C3%A9.jpg"
+  },
+  {
+    "id": "d026",
+    "name": "Mediatheque de Messa",
+    "quartier": "Messa",
+    "category": "bibliotheque",
+    "description": "Mediatheque avec un coin informatique, tres utilisee par les etudiants de la zone universitaire.",
+    "tags": [
+      "etude",
+      "informatique",
+      "lecture"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Lundi-samedi, 8h-18h",
+    "popularity": 24,
+    "lat": 3.8639,
+    "lng": 11.4972,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/American_School_of_Yaound%C3%A9.jpg"
+  },
+  {
+    "id": "d027",
+    "name": "Maquis de Ngoa-Ekelle",
+    "quartier": "Ngoa-Ekelle",
+    "category": "restaurant",
+    "description": "Maquis tres frequente par les etudiants de l'Universite de Yaounde I, connu pour son riz saute et ses jus locaux.",
+    "tags": [
+      "food",
+      "etudiant",
+      "vie-de-quartier"
+    ],
+    "avg_price_fcfa": 1500,
+    "best_time": "Midi et soir",
+    "popularity": 37,
+    "lat": 3.8642,
+    "lng": 11.5031,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/CAM-Sur_la_route_Bagno-Foumban-Maquis.jpg"
+  },
+  {
+    "id": "d028",
+    "name": "Restaurant Populaire de la Briqueterie",
+    "quartier": "Briqueterie",
+    "category": "restaurant",
+    "description": "Adresse reputee pour le folere et les brochettes, ouverte tard le soir.",
+    "tags": [
+      "food",
+      "soiree",
+      "grillades"
+    ],
+    "avg_price_fcfa": 2000,
+    "best_time": "Soir, a partir de 19h",
+    "popularity": 40,
+    "lat": 3.8722,
+    "lng": 11.5139,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/CAM-Sur_la_route_Bagno-Foumban-Maquis.jpg"
+  },
+  {
+    "id": "d029",
+    "name": "Salle des Fetes de Nkol-Eton",
+    "quartier": "Nkol-Eton",
+    "category": "salle-de-fete",
+    "description": "Salle communautaire louee pour mariages, anniversaires et reunions de quartier.",
+    "tags": [
+      "fete",
+      "evenement",
+      "communaute"
+    ],
+    "avg_price_fcfa": 15000,
+    "best_time": "Week-end",
+    "popularity": 19,
+    "lat": 3.8833,
+    "lng": 11.5083,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Palais_des_Sports_Foule.jpg"
+  },
+  {
+    "id": "d030",
+    "name": "Marche Artisanal de Olembe",
+    "quartier": "Olembe",
+    "category": "artisanat",
+    "description": "Petit marche d'artisanat local ou l'on trouve poteries, paniers tresses et objets en bois sculpte.",
+    "tags": [
+      "artisanat",
+      "shopping",
+      "souvenirs"
+    ],
+    "avg_price_fcfa": 0,
+    "best_time": "Matin",
+    "popularity": 16,
+    "lat": 3.9333,
+    "lng": 11.4833,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Travaux_de_finition_de_la_fabrication_des_marmites_dans_une_banlieue_%C3%A0_Yaound%C3%A9.jpg"
   }
 ]
