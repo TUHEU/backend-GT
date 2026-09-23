@@ -30,6 +30,7 @@ ROUTES = {
     "destinations": config.RECOMMENDATION_SERVICE_URL,
     "recommendations": config.RECOMMENDATION_SERVICE_URL,
     "itineraries": config.ITINERARY_SERVICE_URL,
+    "rooms": config.CHAT_SERVICE_URL,
 }
 
 HOP_BY_HOP = {"content-encoding", "content-length", "transfer-encoding", "connection"}
@@ -79,6 +80,7 @@ def health():
         ("user-service", config.USER_SERVICE_URL),
         ("itinerary-service", config.ITINERARY_SERVICE_URL),
         ("recommendation-service", config.RECOMMENDATION_SERVICE_URL),
+        ("chat-service", config.CHAT_SERVICE_URL),
     ):
         try:
             r = requests.get(f"{base}/health", timeout=2)

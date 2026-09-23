@@ -2,7 +2,7 @@
 CS 4122 · Distributed Systems · The ICT University
 
 This is the **backend repo only** (`backend-GT` on the VPS) — separate
-from the `frontend` repo. Phase 1's single Flask process is now 4
+from the `frontend` repo. Phase 1's single Flask process is now 5
 independent services behind an API gateway. **This is a live
 deployment update, not a from-scratch rebuild** — see `DEPLOY_VPS.md`
 for exactly what's running on the actual VPS right now and how to
@@ -29,6 +29,9 @@ redeploy it.
                                                          │ + past sorties
                                             (calls user-service and
                                              itinerary-service back)
+
+                    api-gateway ──────────► chat-service :5014 ──► rooms.json
+                                                                 ──► messages.json
 ```
 
 - **user-service** — owns `users.json`. `/register`, `/login`, `/me`.
@@ -40,6 +43,11 @@ redeploy it.
   `/destinations/<id>/reviews`. Scoring pulls a user's preferences from
   user-service and past sorties from itinerary-service — both over the
   network, not shared code.
+- **chat-service** — owns `rooms.json` and `messages.json`.
+  `GET/POST /rooms`, `GET /rooms/<id>`, `GET/POST /rooms/<id>/messages`.
+  No WebSocket — the frontend polls `GET .../messages?since=<ts>` every
+  few seconds, since api-gateway's `_proxy()` is a synchronous
+  `requests` call and can't forward a socket upgrade anyway.
 - **api-gateway** — the only address the frontend ever talks to.
   Stayed on **port 5003**, the same port Phase 1's single process used
   — so the live frontend's `js/config.js` and the VPS's `ufw` rule both
@@ -58,8 +66,9 @@ shared VPS (this was true back in Phase 1 too, which is why the
 original single backend ended up on 5003 instead of 5000). Since
 `api-gateway` needed to keep 5003 for continuity with the live
 frontend, the three internal services moved to the next free block.
-They're bound to `127.0.0.1` only — never reachable from outside the
-VPS, only from api-gateway and each other.
+`chat-service` took the next free port after that, **5014**. All four
+internal services are bound to `127.0.0.1` only — never reachable from
+outside the VPS, only from api-gateway and each other.
 
 ## Running it locally (for development, not the VPS)
 
@@ -79,6 +88,7 @@ Point a locally-served frontend's `js/config.js` `BASE_URL` at
 cd user-service && pip install -r requirements.txt --break-system-packages && python app.py
 cd itinerary-service && pip install -r requirements.txt --break-system-packages && python app.py
 cd recommendation-service && pip install -r requirements.txt --break-system-packages && python app.py
+cd chat-service && pip install -r requirements.txt --break-system-packages && python app.py
 cd api-gateway && pip install -r requirements.txt --break-system-packages && python app.py
 ```
 
@@ -109,6 +119,10 @@ Phase 1 and ~10 other student projects sharing that box.
 - api-gateway didn't exist before Phase 2 — it's the only thing the
   frontend talks to now, and (as of this round) it no longer serves any
   HTML/CSS/JS itself either — that's 100% the frontend repo's job.
+- New this round: **chat-service** — a 5th service, `rooms.json` +
+  `messages.json`, same decentralized-JWT verification as every other
+  service. `api-gateway`'s `ROUTES` table and `/health` aggregator both
+  updated to include it.
 
 ## Known Phase-2-appropriate limitations
 Per the course's own "Challenges of Microservices" slide: no

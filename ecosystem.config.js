@@ -1,6 +1,6 @@
 /**
  * PM2 process definitions for the Yaoundé Ensemble Phase 2 backend -
- * now 4 processes instead of the old single "backend-gt" one.
+ * now 5 processes instead of the old single "backend-gt" one.
  *
  * Run from inside `backend GT/`:   pm2 start ecosystem.config.js
  *
@@ -15,18 +15,18 @@
  * - user-service/itinerary-service/recommendation-service could NOT
  *   reuse 5000/5001/5002 - those were already taken by other students'
  *   apps on this shared VPS (per the original DEPLOY_VPS.md note).
- *   Moved to 5011/5012/5013 instead - double check these are still
- *   free on your VPS with `ss -tulpn` before deploying, same as the
- *   original setup did.
+ *   Moved to 5011/5012/5013 instead, and chat-service took the next
+ *   free port, 5014 - double check these are still free on your VPS
+ *   with `ss -tulpn` before deploying, same as the original setup did.
  * - Only api-gateway needs `ufw allow <port>/tcp` and a public bind
- *   (0.0.0.0). The other three are internal-only: bind them to
+ *   (0.0.0.0). The other four are internal-only: bind them to
  *   127.0.0.1 so they're unreachable from outside the VPS entirely -
  *   only api-gateway (and each other, over localhost) can reach them.
  */
 const SECRET_KEY = "change-this-to-something-random-and-long";
 // Generate one with: python3 -c "import secrets; print(secrets.token_hex(32))"
-// Use the SAME value for all four apps below - JWTs signed by
-// user-service must verify identically in the other three.
+// Use the SAME value for all five apps below - JWTs signed by
+// user-service must verify identically in the other four.
 
 module.exports = {
   apps: [
@@ -71,6 +71,17 @@ module.exports = {
       restart_delay: 3000,
     },
     {
+      name: "yaounde-chat-service",
+      script: "chat-service/venv/bin/gunicorn",
+      args: "--workers 2 --bind 127.0.0.1:5014 app:app",
+      cwd: __dirname + "/chat-service",
+      interpreter: "none",
+      env: { SECRET_KEY },
+      autorestart: true,
+      max_restarts: 10,
+      restart_delay: 3000,
+    },
+    {
       name: "yaounde-api-gateway",
       script: "api-gateway/venv/bin/gunicorn",
       args: "--workers 2 --bind 0.0.0.0:5003 app:app",
@@ -80,6 +91,7 @@ module.exports = {
         USER_SERVICE_URL: "http://127.0.0.1:5011",
         ITINERARY_SERVICE_URL: "http://127.0.0.1:5012",
         RECOMMENDATION_SERVICE_URL: "http://127.0.0.1:5013",
+        CHAT_SERVICE_URL: "http://127.0.0.1:5014",
       },
       autorestart: true,
       max_restarts: 10,
